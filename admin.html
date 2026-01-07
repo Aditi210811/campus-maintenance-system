@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<script>
+  if (localStorage.getItem("role") !== "admin") location.href="index.html";
+</script>
+
+<div class="card">
+  <h2>Admin Panel</h2>
+  <ul id="issueList"></ul>
+  <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  showIssues();
+  adminNotification();
+</script>
+
+</body>
+</html>
+
+
+

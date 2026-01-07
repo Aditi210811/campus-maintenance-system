@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg">
+
+<script>
+  if (localStorage.getItem("role") !== "user") location.href="index.html";
+</script>
+
+<div class="card">
+  <h2>User Dashboard</h2>
+
+  <input id="title" placeholder="Issue title">
+  <select id="category">
+    <option>Electric</option>
+    <option>Water</option>
+    <option>Internet</option>
+    <option>Other</option>
+  </select>
+
+  <textarea id="description" placeholder="Describe issue"></textarea>
+  <input type="file" id="image">
+
+  <button onclick="addIssue()">Submit Issue</button>
+
+  <h3>My Issues</h3>
+  <ul id="myIssues"></ul>
+
+  <button class="logout" onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  showUserIssues();
+  userNotification();
+</script>
+
+</body>
+</html>
